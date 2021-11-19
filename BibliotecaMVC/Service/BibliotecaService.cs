@@ -8,10 +8,10 @@ namespace BibliotecaMVC.Service
     {
         private const string url = "https://itunes.apple.com/search";
 
-        public Response BuscaLivro()
+        public Response BuscaLivro(string textoPesquisa)
         {
             Response retorno = null;
-            string parametros = $"?term=coraline&entity=ibook";
+            string parametros = $"?term={textoPesquisa}&entity=ibook";
             var newUrl = $"{url}{parametros}";
 
             HttpClient clienteApi = new()
