@@ -22,12 +22,20 @@ namespace BibliotecaMVC.Service
 
     public class Result
     {
+        public int TrackId { get; set; }
+        string _artworkUrl60 { get; set; }
         string _trackName { get; set; }
         string _artistName { get; set; }
         string[] _genres { get; set; }
         double _price { get; set; }
         string _description { get; set; }
 
+        public string ArtworkUrl60
+        {
+            get { return _artworkUrl60; }
+            set { _artworkUrl60 = value;}
+        }
+        
         public string TrackName
         {
             get { return _trackName; }

@@ -115,3 +115,4 @@ C:\Users\marce\OneDrive\Documents\WCC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net5
 C:\Users\marce\OneDrive\Documents\WCC\BibliotecaMVC\BibliotecaMVC\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\marce\OneDrive\Documents\WCC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net5.0\Razor\Views\Autora\Autora.cshtml.g.cs
 C:\Users\marce\OneDrive\Documents\WCC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net5.0\Razor\Views\Livro\Livro.cshtml.g.cs
+C:\Users\marce\OneDrive\Documents\WCC\BibliotecaMVC\BibliotecaMVC\obj\Debug\net5.0\Razor\Views\Livro\LivroDetail.cshtml.g.cs

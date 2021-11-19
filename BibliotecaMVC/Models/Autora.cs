@@ -19,7 +19,7 @@ namespace BibliotecaMVC
         public string Nome
         {
             get { return _nome; }
-            set { _nome = $"{value} perfeita"; }
+            set { _nome = value; }
         }
 
         public List<Autora> Model => new List<Autora>() { 
