@@ -13,9 +13,9 @@ namespace BibliotecaMVC.Controllers
             return View(listaDeLivros);
         }
 
-        public IActionResult LivroDetail(int Id)
+        public IActionResult LivroDetail(int id)
         {
-            var livro = listaDeLivros.Find(livro => livro.Id == Id);
+            var livro = new Livro().GetLivroPeloId(id);
             return View(livro);
         }
     }

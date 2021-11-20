@@ -16,6 +16,9 @@
         <tr>
             <th>Capa</th>
             <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Titulo)
             </th>
             <th>
@@ -34,6 +37,9 @@
                 <img src="@Html.DisplayFor(modelItem => item.ImagemUrl)" />
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Titulo)
             </td>
             <td>
@@ -42,9 +48,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Preco)
             </td>
-            <!--td>
+            <td>
                 <a asp-action="LivroDetail" asp-route-id="@item.Id">Detalhes</a>
-            </td-->
+            </td>
         </tr>
 }
     </tbody>

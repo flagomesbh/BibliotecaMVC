@@ -1,10 +1,10 @@
 ﻿@model BibliotecaMVC.Livro
 
 @{
-    ViewData["Title"] = "Livro - Detalhes";
+    ViewData["Title"] = "LivroDetail";
 }
 
-<h1>LivroDetail</h1>
+<h1>@Html.DisplayFor(model => model.Titulo)</h1>
 
 <div>
     <h4>Livro</h4>
@@ -14,7 +14,7 @@
             @Html.DisplayNameFor(model => model.Id)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Titulo)
+            @Html.DisplayFor(model => model.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Descricao)
@@ -28,9 +28,25 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Preco)
         </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Autora)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Autora.Nome)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class = "col-sm-10">
+            @foreach (string genero in Model.Genero)
+            {
+                <p>
+                    @Html.DisplayFor(model => genero)
+                </p>
+            }
+        </dd>
     </dl>
 </div>
 <div>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     <a asp-action="Livro">Back to List</a>
 </div>

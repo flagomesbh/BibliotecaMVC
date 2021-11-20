@@ -5,7 +5,7 @@ namespace BibliotecaMVC
 {
     public class Livro
     {
-        public int Id { get; set; }
+        private int _id { get; set; }
         [System.ComponentModel.Bindable(true)]
         private string _imagemUrl { get; set; }
         private string _titulo { get; set; }
@@ -13,6 +13,12 @@ namespace BibliotecaMVC
         private double _preco { get; set; }
         private Autora _autora { get; set; }
         private string[] _genero { get; set; }
+        
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
         
         public string ImagemUrl
         {
@@ -28,7 +34,7 @@ namespace BibliotecaMVC
         public string Descricao 
         {
             get { return _descricao; }
-            set { _descricao = value; }
+            set { _descricao = value.Replace("<br />", ""); }
         }
         public double Preco
         {
@@ -94,6 +100,27 @@ namespace BibliotecaMVC
             }
              
             return listaDeLivro;
+        }
+
+        public Livro GetLivroPeloId(int id)
+        {
+            var servico = new BibliotecaService();
+            var resposta = servico.BuscaLivroPeloId(id);
+
+            var livroResposta = resposta.Results[0];
+            var livro = new Livro()
+            {
+                Id = livroResposta.TrackId,
+                ImagemUrl = livroResposta.ArtworkUrl60,
+                Titulo = livroResposta.TrackName,
+                Autora = new Autora(livroResposta.ArtistName),
+                Preco = livroResposta.Price,
+                Genero = livroResposta.Genres,
+                Descricao = livroResposta.Description
+            };
+
+            
+            return livro;
         }
     }
 }
